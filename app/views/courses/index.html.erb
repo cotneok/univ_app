@@ -5,34 +5,21 @@
 </div>
 
   <div class="row">
-    <div class="col s6 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmrpFGjR7M0tO2KmlY08TL4Ln289BViDmVi8Nf4ue-AkKdv8399A">
-          <span class="card-title">CS111: Intro to Computer Science</span>
-        </div>
-        <div class="card-content">
-          <p>A thorough intro to Computer Science.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Enroll</a>
-          <a href="#">Info</a>
-        </div>
-      </div>
-    </div>
-    <div class="col s6 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="https://diro.umontreal.ca/public/FAS/diro/Images/accueil/artificial-intelligence.jpg">
-          <span class="card-title">CS112: Intro to Computer Science 2</span>
-        </div>
-        <div class="card-content">
-          <p>An Intermediate look at Computer Science.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Enroll</a>
-          <a href="#">Info</a>
+    <% Course.all.each do |course| %>
+      <div class="col s6 m6">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmrpFGjR7M0tO2KmlY08TL4Ln289BViDmVi8Nf4ue-AkKdv8399A">
+            <span class="card-title"><%= course.short_name %>: <%= course.name %></span>
+          </div>
+          <div class="card-content">
+            <p><%= course.description %></p>
+          </div>
+          <div class="card-action">
+            <a href="#">Enroll</a>
+            <a href="#">Info</a>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
